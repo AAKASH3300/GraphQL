@@ -1,0 +1,43 @@
+// Get all movies
+query {
+getAllMoviesHandler {
+id
+title
+studio
+director
+movieCast
+releaseYear
+}
+}
+
+// Add movie
+mutation {
+addMovieHandler(movieInput: {title: "Gadar2", director: "Anil Sharma"
+studio: "Zee Studios", releaseYear: 2023, movieCast: ["Sunny Deol", "Amisha Patel"]}) {
+id
+title
+director
+studio
+releaseYear
+movieCast
+}
+}
+
+// Update Movie
+mutation {
+updateMovieHandler(id: 1, movieInput: {title: "Avengers Infinity War", studio: "Marvel Studios",
+director: "Joe and Anthony Russo", movieCast: ["RDJ", "Chris Evans", "Josh Brolin", "Chris Hemsworth"], releaseYear: 2018})
+{
+id
+title
+studio
+director
+movieCast
+releaseYear
+}
+}
+
+// Delete Movie
+mutation {
+deleteMovieHandler(id: 3)
+}
